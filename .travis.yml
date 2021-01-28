@@ -1,3 +1,16 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : opencv-python
+# Source Repo         : https://github.com/skvark/opencv-python
+# Travis Job Link     : https://travis-ci.com/github/asellappen/opencv-python/
+# Created travis.yml  : No
+# Maintainer          : Arumugam N S <asellappen@yahoo.com> / Priya Seth<sethp@us.ibm.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+
+
 env:
     global:
         - "PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'"
@@ -268,6 +281,21 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
+	- os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache	
     - os: linux
       language: generic
       dist: xenial
@@ -294,6 +322,21 @@ jobs:
         directories: $HOME/.ccache
     - os: linux
       arch: arm64
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+	- os: linux
+      arch: ppc64le
       language: generic
       dist: xenial
       services: docker
@@ -347,6 +390,21 @@ jobs:
       cache:
         directories: $HOME/.ccache
     - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
       language: generic
       dist: xenial
       services: docker
@@ -385,7 +443,21 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
-
+    - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
     # headless builds for Linux
     - os: linux
       language: generic
@@ -426,6 +498,22 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
+		
+    - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache		
     - os: linux
       language: generic
       dist: xenial
@@ -452,6 +540,21 @@ jobs:
         directories: $HOME/.ccache
     - os: linux
       arch: arm64
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
+      arch: ppc64le
       language: generic
       dist: xenial
       services: docker
@@ -505,6 +608,21 @@ jobs:
       cache:
         directories: $HOME/.ccache
     - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
       language: generic
       dist: xenial
       services: docker
@@ -543,7 +661,21 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
-
+    - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=0
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
     # contrib builds for Linux
     - os: linux
       language: generic
@@ -585,6 +717,21 @@ jobs:
       cache:
         directories: $HOME/.ccache
     - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
       language: generic
       dist: xenial
       services: docker
@@ -610,6 +757,21 @@ jobs:
         directories: $HOME/.ccache
     - os: linux
       arch: arm64
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
+      arch: ppc64le
       language: generic
       dist: xenial
       services: docker
@@ -663,6 +825,21 @@ jobs:
       cache:
         directories: $HOME/.ccache
     - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
       language: generic
       dist: xenial
       services: docker
@@ -701,7 +878,21 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
-
+    - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=0
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
 
     # headless contrib builds for Linux
     - os: linux
@@ -744,6 +935,21 @@ jobs:
       cache:
         directories: $HOME/.ccache
     - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
       language: generic
       dist: xenial
       services: docker
@@ -769,6 +975,21 @@ jobs:
         directories: $HOME/.ccache
     - os: linux
       arch: arm64
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
+      arch: ppc64le
       language: generic
       dist: xenial
       services: docker
@@ -822,6 +1043,21 @@ jobs:
       cache:
         directories: $HOME/.ccache
     - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.8
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
+    - os: linux
       language: generic
       dist: xenial
       services: docker
@@ -860,7 +1096,21 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
-
+    - os: linux
+      arch: ppc64le
+      language: generic
+      dist: xenial
+      services: docker
+      env:
+        - MB_PYTHON_VERSION=3.9
+        - PLAT=aarch64
+        - DOCKER_TEST_IMAGE=multibuild/xenial_arm64v8
+        - ENABLE_CONTRIB=1
+        - ENABLE_HEADLESS=1
+        - TEST_DEPENDS=numpy==1.19.0
+        - USE_CCACHE=0
+      cache:
+        directories: $HOME/.ccache
 # The first line is printed in the folding header in Travis output
 before_install: |
     set -e
