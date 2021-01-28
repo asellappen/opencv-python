@@ -281,7 +281,7 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
-	- os: linux
+    - os: linux
       arch: ppc64le
       language: generic
       dist: xenial
@@ -335,7 +335,7 @@ jobs:
         - USE_CCACHE=0
       cache:
         directories: $HOME/.ccache
-	- os: linux
+    - os: linux
       arch: ppc64le
       language: generic
       dist: xenial
